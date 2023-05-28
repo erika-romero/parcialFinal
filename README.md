@@ -26,3 +26,6 @@ Se creó un pipeline de procesamiento para los datos de noticias utilizando PySp
 ## Stream en AWS Kinesis
 Este proyecto tiene como objetivo implementar un sistema de procesamiento de datos en tiempo real utilizando AWS Kinesis. Se implementarán dos productores que enviarán datos de acciones a un stream en AWS Kinesis, así como dos consumidores que procesarán los datos recibidos y generarán alertas cuando el precio de alguna acción supere la franja superior o esté por debajo de la franja inferior de Bollinger.
 
+##Documentación
+[Bollinger Bands](https://linktodocumentation](https://www.fidelity.com/learning-center/trading-investing/technical-analysis/technical-indicator-guide/bollinger-bands#:~:text=Bollinger%20Bands%20are%20envelopes%20plotted,Period%20and%20Standard%20Deviations%2C%20StdDev) 
+[ML Pipelines](https://spark.apache.org/docs/latest/ml-pipeline.html)
