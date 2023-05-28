@@ -20,8 +20,9 @@ Erika Romero
 
 # Parcial 3 
   
-##Procesamiento de Datos con PySpark 
+## Procesamiento de Datos con PySpark 
 Se creó un pipeline de procesamiento para los datos de noticias utilizando PySpark ML. El pipeline realizó la vectorización de los textos utilizando TF-IDF (Term Frequency-Inverse Document Frequency) y se implementó en AWS Glue o se ejecutó en EMR con Spark Submit.
 
-##Stream en AWS Kinesis
+## Stream en AWS Kinesis
 Este proyecto tiene como objetivo implementar un sistema de procesamiento de datos en tiempo real utilizando AWS Kinesis. Se implementarán dos productores que enviarán datos de acciones a un stream en AWS Kinesis, así como dos consumidores que procesarán los datos recibidos y generarán alertas cuando el precio de alguna acción supere la franja superior o esté por debajo de la franja inferior de Bollinger.
+
