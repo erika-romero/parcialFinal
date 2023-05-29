@@ -14,5 +14,5 @@ def test_empty_price_window():
 
 # Ejecutar la prueba
 if __name__ == '__main__':
-    test_no_alert_triggered()
+   test_empty_price_window()
 
