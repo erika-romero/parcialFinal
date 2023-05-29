@@ -1,8 +1,8 @@
 from consumidorL import check_bollinger
 
-def test_no_alert_triggered():
+def test_empty_price_window():
     # Configurar datos de prueba
-    price_window = [120, 140, 160, 180, 200]
+    price_window = []
     price = 190
     stock = "AAPL"
 
