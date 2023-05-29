@@ -1,18 +1,30 @@
-import time
-import json
-from unittest.mock import MagicMock, ANY
-from producer1 import generate
+from producer1 import get_data
 
-def test_generate_continuous_data_generation():
-    # Configurar el estado inicial
-    stream_name = "parcial3"
-    kinesis_client = MagicMock()
-    
-    # Llamar a la función durante un período de tiempo
-    start_time = time.time()
-    while time.time() - start_time < 5:  # Generar datos durante 5 segundos
-        generate(stream_name, kinesis_client)
-    
-    # Comprobar que se llamó a la función put_record varias veces
-    assert kinesis_client.put_record.call_count > 1
+def test_get_data_valid_event_time():
+    data = get_data()
+    event_time = data.get('event_time')
+
+    assert event_time is not None
+    assert isinstance(event_time, str)
+    assert len(event_time) > 0
+    assert event_time.count(':') == 2  # Verificar el formato HH:MM:SS
+    assert event_time.count('-') == 2  # Verificar el formato AAAA-MM-DD
+
+def test_get_data_valid_stock():
+    data = get_data()
+    stock = data.get('stock')
+
+    assert stock is not None
+    assert isinstance(stock, str)
+    assert len(stock) > 0
+    assert stock in ['AAPL', 'AMZN', 'MSFT', 'INTC', 'TBV']  # Verificar valores válidos
+
+def test_get_data_valid_price():
+    data = get_data()
+    price = data.get('price')
+
+    assert price is not None
+    assert isinstance(price, (int, float))
+    assert price >= 0
+    assert price <= 200  # Verificar rango válido
 
