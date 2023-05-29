@@ -34,7 +34,7 @@ jobs:
           aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           aws-session-token: ${{secrets.AWS_SESSION_TOKEN}}
           aws-region: us-east-1
-      - name: Stream
+      - name: Stream1
         run: |
           sudo add-apt-repository universe
           sudo apt install python3-pip
