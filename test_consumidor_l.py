@@ -1,14 +1,18 @@
-from consumidorL import consume_bollinger
+from consumidorL import check_bollinger
 
-def test_consume_bollinger_empty_window():
-    price_window = {}
-    stream_name = "parcial3"
-    window_size = 20
-    num_std_dev = 1
+def test_no_alert_triggered():
+    # Configurar datos de prueba
+    price_window = [120, 140, 160, 180, 200]
+    price = 190
+    stock = "AAPL"
 
-    # Llamada a la función bajo prueba
-    consume_bollinger()
+    # Ejecutar la función que se está probando
+    result = check_bollinger(price_window, price, stock)
 
-    # Comprobar que no se realiza ninguna acción cuando la ventana está vacía
-    assert price_window == {}
+    # Verificar que no se generó ninguna alerta
+    assert result is None
+
+# Ejecutar la prueba
+if __name__ == '__main__':
+    test_no_alert_triggered()
 
